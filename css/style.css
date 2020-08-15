@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+body  {
+    width: 100%;
+    min-height: 100vh;
+    font-size: 1rem;
+    background: url('../images/bg4.jpg') no-repeat center center;
+    background-size: cover;
+    font-family: 'Open Sans';
+}
+
+.nav {
+    position: absolute;
+    max-width: 50%;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav__item {
+    position: relative;
+    color: #ddd;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav__item::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #c45f42;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+.nav__item:hover {
+    color: white;
+}
+
+.nav__item:hover:after {
+    transform: scaleX(1);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+
+.main {
+    position: relative;
+    width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag {
+    color: #999;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transform: rotateZ(-90deg);
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: -50px;
+}
+
+.main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background-color: #555;
+    z-index: -1;
+}
+
+.main::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+}
+
+.main__content {
+    max-width: 60%;
+}
+
+.weather {
+    margin-bottom: 1rem;
+    color: #bbb;
+    font-size: 1.5rem;
+}
+
+.degree {
+    font-size: 1.2rem;
+    display: inline-block;
+    transform: translateY(-15px);
+}
+
+.heading {
+    color: white;
+    line-height: 1.2;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    font-family: 'Anton';
+    font-weight: 400;
+    font-size: 4rem;
+}
+
+.caption {
+    color: #bbb;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin: 1rem 0 1.5rem 0;
+}
+
+.btn {
+    font-weight: lighter;
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.2rem 2rem;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    background-color: #c45f42;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: inset 0 0 0 2px #c45f42;
+    background-color: transparent;
+}
+
+@media screen and (max-width:1023px) {
+    .main {
+        width: 100vw;
+    }
+    .nav {
+        max-width: 100%;
+    }
+}
